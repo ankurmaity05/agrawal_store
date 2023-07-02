@@ -1,0 +1,23 @@
+[33mcommit e0cd9d1c5d7682e0fbbbf63a0b6e561a30a1140c[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Ankur Maity <anma20cs@cmrit.ac.in>
+Date:   Sun Jul 2 18:54:43 2023 +0530
+
+    third commit
+
+[33mcommit e04e2058dc021df105b803b4cea9970a9120f147[m
+Author: Ankur Maity <anma20cs@cmrit.ac.in>
+Date:   Sat Jun 24 16:46:29 2023 +0530
+
+    second commit
+
+[33mcommit 287724ad04d98d99153eccf605dabfb42b4280df[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Ankur Maity <anma20cs@cmrit.ac.in>
+Date:   Sat Jun 24 12:34:43 2023 +0530
+
+    initial commit
+
+[33mcommit 1e14c8600a0f9624a1652c6297d56760a1559e72[m
+Author: Ankur Maity <anma20cs@cmrit.ac.in>
+Date:   Fri Jun 23 17:32:11 2023 +0530
+
+    Initialize project using Create React App
