@@ -1,211 +1,79 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import './style.css'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import ReactModal from 'react-modal';
+import grocer from '../Components/grocer';
+import './style.css';
 
 function Grocery() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [product, setProduct] = useState({});
   return (
-    <div className="grid-container">
-        
-        <header className="row">
+    <>
+    <ReactModal isOpen={isOpen} style={{
+    overlay: {
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(255, 255, 255, 0.75)'
+    },
+    content: {
+      position: 'absolute',
+      height: '500px',
+      width: '500px',
+      top: '40px',
+      left: '30%',
+      right: '40px',
+      bottom: '40px',
+      border: '1px solid #ccc',
+      background: '#fff',
+      overflow: 'auto',
+      WebkitOverflowScrolling: 'touch',
+      borderRadius: '4px',
+      outline: 'none',
+      padding: '20px'
+    }
+  }}>
+    <p>{product.name}</p>
+    <p>{product.description}</p>
+     <button onClick={() => setIsOpen(false)}>Close</button>   
+    </ReactModal>
+      <div className="grid-container">
+      <header className="row">
         <div><Link to="/" className="brand">Agrawal Store</Link></div>
         <div>
             <Link to="/grocery">Grocery</Link>
             <Link to="/snacks">Snack</Link>
-            <Link to="/clenHome">Clean & Home Essentials</Link>
+            <Link to="/cleanHome">Clean & Home Essentials</Link>
             <Link to="/cart">Cart</Link>
             <Link to="/signin">Sign In</Link>
         </div>
     </header>
-    <div className="row center">
-        
-        <div className="card">
-           
-            <Link to="product.html">
-                
-                <img className="medium" src="/Grocery Fotos/atta and flours/fortune-atta.jpg" height="200" width="200" alt="Fortune-Atta"/>
-            </Link>
-        <div className="card-body">
-            <Link to="product.html">
-                <h2>Fortune Atta</h2>
-            </Link>
-            <div className="rating">
-                <span> <i className="fa fa-star"></i> </span>
-                <span> <i className="fa fa-star"></i> </span>
-                <span> <i className="fa fa-star"></i> </span>
-                <span> <i className="fa fa-star"></i> </span>
-                <span> <i className="fa fa-star-half"></i> </span>
-            </div>
-            <div className="price">
-                Rs. 300
-            </div>
-       </div>
-    </div>
-    <div className="card">
-        <Link to="product.html">
-            <img className="medium" src="/Grocery Fotos/atta and flours/aashirvaad-atta.jpg" height="200" width="200" alt="Aashirvaad-atta"/>
-        </Link>
-    <div className="card-body">
-        <Link to="product.html">
-            <h2>Aashirvaad Atta</h2>
-        </Link>
-        <div className="rating">
-            <span> <i className="fa fa-star"></i> </span>
-            <span> <i className="fa fa-star"></i> </span>
-            <span> <i className="fa fa-star"></i> </span>
-            <span> <i className="fa fa-star"></i> </span>
-            <span> <i className="fa fa-star"></i> </span>
-        </div>
-        <div className="price">
-            Rs. 250
-        </div>
-   </div>
-</div>
-<div className="card">
-    <Link to="product.html">
-        <img className="medium" src="/Grocery Fotos/atta and flours/fortune-maida.jpg" height="200" width="200" alt="Fortune-maida"/>
-    </Link>
-<div className="card-body">
-    <Link to="product.html">
-        <h2>Fortune Maida</h2>
-    </Link>
-    <div className="rating">
-        <span> <i className="fa fa-star"></i> </span>
-        <span> <i className="fa fa-star"></i> </span>
-        <span> <i className="fa fa-star"></i> </span>
-        <span> <i className="fa fa-star"></i> </span>
-        <span> <i className="fa fa-star"></i> </span>
-    </div>
-    <div className="price">
-        Rs. 250
-    </div>
-</div>
-</div>
-<div className="card">
-<Link to="product.html">
-    <img className="medium" src="/Grocery Fotos/atta and flours/fortune-suji.jpg" height="200" width="200" alt="Fortune-Suji"/>
-</Link>
-<div className="card-body">
-<Link to="product.html">
-    <h2>Fortune Suji</h2>
-</Link>
-<div className="rating">
-    <span> <i className="fa fa-star"></i> </span>
-    <span> <i className="fa fa-star"></i> </span>
-    <span> <i className="fa fa-star"></i> </span>
-    <span> <i className="fa fa-star"></i> </span>
-    <span> <i className="fa fa-star"></i> </span>
-</div>
-<div className="price">
-    Rs. 250
-</div>
-</div>
-</div>
-<div className="card">
-    <Link to="product.html">
-        <img className="medium" src="/Grocery Fotos/rice/basmati.jpg" height="200" width="200" alt="Basmati Rice"/>
-    </Link>
-    <div className="card-body">
-    <Link to="product.html">
-        <h2>Daawat Basmati Rice</h2>
-    </Link>
-    <div className="rating">
-        <span> <i className="fa fa-star"></i> </span>
-        <span> <i className="fa fa-star"></i> </span>
-        <span> <i className="fa fa-star"></i> </span>
-        <span> <i className="fa fa-star"></i> </span>
-        <span> <i className="fa fa-star"></i> </span>
-    </div>
-    <div className="price">
-        Rs. 250
-    </div>
-    </div>
-    </div>
-    <div className="card">
-        <Link to="product.html">
-
-            <img className="medium" src="/Grocery Fotos/rice/brown-rice.jpg" height="200" width="200" alt="Fortune-Suji"/>
-        </Link>
-        <div className="card-body">
-        <Link to="product.html">
-            <h2>Fortune Suji</h2>
-        </Link>
-        <div className="rating">
-            <span> <i className="fa fa-star"></i> </span>
-            <span> <i className="fa fa-star"></i> </span>
-            <span> <i className="fa fa-star"></i> </span>
-            <span> <i className="fa fa-star"></i> </span>
-            <span> <i className="fa fa-star"></i> </span>
-        </div>
-        <div className="price">
-            Rs. 250
-        </div>
-        </div>
-        </div>
-        <div className="card">
-            <Link to="product.html">
-    
-                <img className="medium" src="/Grocery Fotos/rice/white-rice.jpg" height="200" width="200" alt="Fortune-Suji"/>
-            </Link>
-            <div className="card-body">
-            <Link to="product.html">
-                <h2>Fortune Suji</h2>
-            </Link>
-            <div className="rating">
-                <span> <i className="fa fa-star"></i> </span>
-                <span> <i className="fa fa-star"></i> </span>
-                <span> <i className="fa fa-star"></i> </span>
-                <span> <i className="fa fa-star"></i> </span>
-                <span> <i className="fa fa-star"></i> </span>
-            </div>
-            <div className="price">
-                Rs. 250
-            </div>
-            </div>
-            </div>
-            <div className="card">
-                <Link to="product.html">
-        
-                    <img className="medium" src="/Grocery Fotos/noodle and pasta/maggi.jpg" height="200" width="250" alt="Fortune-Suji"/>
-                </Link>
-                <div className="card-body">
-                <Link to="product.html">
-                    <h2>Fortune Suji</h2>
+      </div>
+      <main>
+        <div className='products'>
+          {grocer.products.map(product => (
+            <div className='product' key={product.slug}>
+                <img src={product.image} alt={product.name} height={200} width={200} onClick={ () => { setProduct(product); setIsOpen(true); }} />
+              <div className="product-info">
+                <Link to={`/product/${product.slug}`}>
+                  <p>{product.name}</p>
                 </Link>
                 <div className="rating">
-                    <span> <i className="fa fa-star"></i> </span>
-                    <span> <i className="fa fa-star"></i> </span>
-                    <span> <i className="fa fa-star"></i> </span>
-                    <span> <i className="fa fa-star"></i> </span>
-                    <span> <i className="fa fa-star"></i> </span>
+                  <span> <i className="fa fa-star"></i> </span>
+                  <span> <i className="fa fa-star"></i> </span>
+                  <span> <i className="fa fa-star"></i> </span>
+                  <span> <i className="fa fa-star"></i> </span>
+                  <span> <i className="fa fa-star-half-o"></i> </span>
                 </div>
-                <div className="price">
-                    Rs. 250
-                </div>
-                </div>
-                </div>
-                <div className="card">
-                    <Link to="product.html">
-            
-                        <img className="medium" src="/Grocery Fotos/noodle and pasta/macroni.jpg" height="200" width="200" alt="Fortune-Suji"/>
-                    </Link>
-                    <div className="card-body">
-                    <Link to="product.html">
-                        <h2>Fortune Suji</h2>
-                    </Link>
-                    <div className="rating">
-                        <span> <i className="fa fa-star"></i> </span>
-                        <span> <i className="fa fa-star"></i> </span>
-                        <span> <i className="fa fa-star"></i> </span>
-                        <span> <i className="fa fa-star"></i> </span>
-                        <span> <i className="fa fa-star"></i> </span>
-                    </div>
-                    <div className="price">
-                        Rs. 250
-                    </div>
-                    </div>
-                    </div>
-    </div>
- </div>
+                <p><strong>{product.price}</strong></p>
+                <button>Add to cart</button>
+              </div>
+            </div>))
+          }</div>
+      </main>
+    </>
   )
 }
 

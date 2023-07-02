@@ -5,12 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Grocery from './pages/grocery';
 import Snacks from './pages/snacks';
-import ClenHome from './pages/clenHome';
+import CleanHome from './pages/cleanHome';
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-
 
 const router = createBrowserRouter([
   {
@@ -26,8 +25,8 @@ const router = createBrowserRouter([
     element: <Snacks/>,
   },
   {
-    path: "/clenHome",
-    element: <ClenHome/>
+    path: "/cleanHome",
+    element: <CleanHome/>
   }
 ]);
 

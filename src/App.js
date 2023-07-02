@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 function App() {
   return (
@@ -15,7 +17,21 @@ function App() {
             </div>
         </header>
         <main>
-        
+          <div>
+          <Carousel autoPlay={true} infiniteLoop interval={3000} showArrows showThumbs={false}>
+                <div>
+                    <img src="/Grocery Fotos/main/fruits.jpeg" height={700} width={'auto'} alt='' />
+                    
+                </div>
+                <div>
+                    <img src="/Grocery Fotos/main/HomeEssen.jpg" height={700} width={'auto'} alt=''/>
+                    
+                </div>
+                <div>
+                    <img src="/Grocery Fotos/main/main.png" height={700} width={'auto'} alt=''/>
+                </div>
+            </Carousel>
+          </div>
         </main>
         <footer className="footer">
             <div>All rights reserved</div>
